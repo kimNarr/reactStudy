@@ -1,0 +1,140 @@
+* {margin: 0; padding: 0; box-sizing: border-box;}
+ul, li {list-style: none;}
+a {text-decoration: none; color: inherit;}
+
+header {
+    width: 100%;
+    height: 90px;
+    border-bottom: 1px solid #e2e2e2;
+}
+header .inner {
+    max-width: 1400px;
+    height: 100%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+header .inner ul {
+    width: fit-content;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    column-gap: 30px;
+}
+header .inner ul li {
+    height: 100%;
+    align-content: center;
+}
+
+/* section common */
+section {
+    padding: 150px 0 100px 0;
+}
+section .inner {
+    max-width: 1400px;
+    margin: auto;
+}
+section .inner h2 {
+    font-size: 32px;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-bottom: 100px;
+}
+
+/* program */
+.program .inner .pItem {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 40px 20px;
+}
+.program .inner .pItem li .imgBox {
+    width: 100%;
+    height: 300px;
+    margin-bottom: 10px;
+    background-color: #666;
+}
+.program .inner .pItem li h3 {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+.program .inner .pItem li .name {
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 6px;
+}
+.program .inner .pItem li .date {
+    font-size: 13px;
+    font-weight: normal;
+    color: #666;
+    margin-bottom: 10px;
+}
+.program .inner .pItem li .text {
+    font-size: 12px;
+    line-height: 1.5;
+    font-weight: normal;
+    word-break: keep-all;
+}
+
+/* product */
+.product {
+    padding-bottom: 300px;
+}
+.product .inner .dItem {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+.product .inner .dItem li .imgBox {
+    width: 100%;
+    height: 500px;
+    margin-bottom: 10px;
+    background-color: #333;
+}
+.product .inner .dItem li h3 {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+.product .inner .dItem li .text {
+    font-size: 12px;
+    line-height: 1.5;
+    font-weight: normal;
+    word-break: keep-all;
+}
+
+/* footer */
+footer {
+    width: 100%;
+    height: 400px;
+    text-align: center;
+    align-content: center;
+    color: #fff;
+    background: #000;
+}
+
+@media (max-width:1400px) {
+    header .inner {
+        padding: 0 16px;
+    }
+}
+
+@media (max-width:1024px) {
+    .program .inner .pItem {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+    section .inner {
+        padding: 0 16px;
+    }
+}
+
+@media (max-width:768px) {
+    .program .inner .pItem {
+        grid-template-columns: repeat(1, 1fr);
+    }
+    .product .inner .dItem {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
