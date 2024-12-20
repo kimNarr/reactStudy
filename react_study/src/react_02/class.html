@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Class</title>
+</head>
+<body>
+
+    <script>
+        /*
+
+        class 객체 지향 프로그래밍을 구현하기 위한 구조
+
+        */
+
+        // 일반적으로 객체 활용 방법
+        // const students = []
+        // students.push({이름:'경희', 국어:100, 영어:80, 수학:50, 과학:70});
+        // students.push({이름:'유나', 국어:100, 영어:100, 수학:92, 과학:80});
+        // students.push({이름:'상민', 국어:50, 영어:80, 수학:100, 과학:20});
+        // students.push({이름:'아정', 국어:20, 영어:100, 수학:30, 과학:100});
+        // students.push({이름:'희정', 국어:20, 영어:90, 수학:15, 과학:100});
+
+        // console.log(students)
+
+        // 총점 평균
+
+        // students.forEach(v=>{
+        //     let sum = v.국어 + v.영어 + v.수학 + v.과학;
+        //     let aver = sum / 4;
+
+        //     console.log(v.이름, sum, aver)
+        // });
+
+        // let out = `이름\t총점\t평균\n`;
+
+        // for(let s of students) {
+        //     let sum = s.국어 + s.영어 + s.수학 + s.과학;
+        //     let aver = sum / 4;
+        //     out += `${s.이름}\t${sum}점\t${aver}점\n`;
+        // }
+        // console.log(out)
+
+
+        // 객체를 처리하는 함수를 활용하면 확장성을 고려했을 때 좋은 방법
+
+        // function totalSum(student) {
+        //     return student.국어 + student.영어 + student.수학 + student.과학
+        // }
+
+        // function aver(student) {
+        //     return totalSum(student) / 4
+        // }
+
+        // let out = `이름\t총점\t평균\n`;
+        // for(let s of students){
+        //     out += `${s.이름}\t${totalSum(s)}점\t${aver(s)}점\n`
+        // }
+        // console.log(out)
+
+        // 객체의 기능을 메소드로 추가
+
+        // for(let student of students) {
+        //     student.총점 = function(){
+        //         return this.국어 + this.영어 + this.수학 + this.과학
+        //     }
+        //     student.평균 = function(){
+        //         return this.총점() / 4
+        //     }
+        // }
+
+        // let out = `이름\t총점\t평균\n`;
+
+        // for(let s of students) {
+        //     out += `${s.이름}\t${s.총점(s)}점\t${s.평균(s)}점\n`
+        // }
+
+        // console.log(out)
+
+
+        // 객체의 키와 값을 생성함수를 사용해서 객체를 생성하면 더 쉽게 사용 가능
+        
+        // function 학생(이름,국어,영어,수학,과학) {
+        //     return{
+        //         이름:이름,
+        //         국어:국어,
+        //         영어:영어,
+        //         수학:수학,
+        //         과학:과학,
+        //         총점(){
+        //             return this.국어 + this.영어 + this.수학 + this.과학
+        //         },
+        //         평균(){
+        //             return this.총점() / 4
+        //         },
+        //         toString(){
+        //             return `${this.이름}\t${this.총점()}점\t${this.평균()}점\n`
+        //         }
+        //     }
+        // }
+
+        // const students = [];
+
+        // students.push(학생('경희',100,80,50,70));
+        // students.push(학생('유나',100,100,92,80));
+        // students.push(학생('상민',50,80,100,20));
+        // students.push(학생('아정',20,100,30,100));
+        // students.push(학생('희정',20,90,15,100));
+
+        // let out = `이름\t총점\t평균\n`;
+
+        // for(let s of students){
+        //     out += s.toString()
+        // }
+        // console.log(out);
+
+
+        /* 
+
+         객체를 처리하는 함수
+         Class : 객체 지향 프로그래밍을 지원하는 es6에서 도입된 개념
+         객체를 생성하기 위한 템플릿
+         
+         클래스 : 객체를 만드는 함수와 비슷한 값
+         인스턴스 :  객체를 만드는 함수로 만든 객체와 비슷한 값
+
+         문법
+         class 클래스명 {
+            constructor() {
+                생성자코드
+            }
+         }
+
+         ※ 클래스의 이름은 첫글자를 대문자로 지정
+
+        //  constructor : 생성자 / 클래스의 인스턴스를 생성할 때 호출되는 특별한 매서드
+                                   객체의 초기 상태를 설정하는데 사용
+
+
+        // 클래스함수에서 메소드를 정의
+        class 클래스명 {
+            constructor() {
+                생성자코드
+            }
+            method(){
+            }
+            method(){
+            }
+         }
+        */
+
+        // class Student {
+        //     constructor(이름,국어,영어,수학,과학) {
+        //         this.이름 = 이름;
+        //         this.국어 = 국어;
+        //         this.영어 = 영어;
+        //         this.수학 = 수학;
+        //         this.과학 = 과학;
+        //     }
+        //     총점() {
+        //         return this.국어 + this.영어 + this.수학 + this.과학
+        //     }
+        //     평균() {
+        //         return this.총점() / 4
+        //     }
+        //     출력() {
+        //         return `${this.이름}\t${this.총점()}점\t${this.평균()}점\n`
+        //     }
+        // }
+
+        // const 학생 = [];
+        // 학생.push(new Student('경희',100,80,50,70))
+        // 학생.push(new Student('유나',100,100,92,80))
+        // 학생.push(new Student('상민',50,80,100,20))
+        // 학생.push(new Student('아정',20,100,30,100))
+        // 학생.push(new Student('희정',20,90,15,100))
+
+        // console.log(학생)
+        // let out = `이름\t총점\t평균\n`;
+        // for(let s of 학생) {
+        //     out += s.출력();
+        // }
+        // console.log(out);
+
+        /*
+        상속하여 사용 하기
+        extends 키워드를 사용하여 상속을 구현
+        자식 클래스는 super 키워드를 통해 부모클래스의 생성자를 호출하거나 매서드를 사용 할 수 있음
+
+        문법
+
+        class 클래스명(자식) extends 클래스명(부모) {
+
+        }
+        */
+
+        // class Animal {
+        //     constructor(name){
+        //         this.name = name;
+        //     }
+        //     size(){
+        //         console.log(`${this.name} 무슨사이즈?`)
+        //     }
+        // }
+
+        // class Dog extends Animal {
+        //     size(){
+        //         console.log(`${this.name} 몰라`)
+        //     }
+        // }
+
+        // const an = new Dog("개");
+        // an.size();
+
+        // class Animal {
+        //     constructor(name) {
+        //         this.name = name;
+        //     }
+        //     color() {
+        //         document.write(`${this.name}색은 몰라`);
+        //     }
+        // }
+
+        // class Size extends Animal {
+        //     constructor(name, size) {
+        //         super(name); // 부모클래스의 생성자 그대로 호출
+        //         this.size = size;
+        //     }
+        //     color(){
+        //         super.color(); //부모클래스의 메소드 호출
+        //         document.write(`${this.size} 사이즈 몰라`);
+        //     }
+        // }
+
+        // const an = new Size("강아지","크기");
+        // an.color();
+
+
+        // class Abc {
+        //     constructor(a,b){
+        //         this.a = a;
+        //         this.b = b;
+        //     }
+        //     out() {
+        //         return this.a + this.b
+        //     }
+        // }
+
+        // class Qwe extends Abc {
+        //     constructor(a,b) {
+        //         this.b = b;
+        //     }
+        //     in() {
+        //         return this.a * this.x;
+        //     }
+        // }
+
+        // let val = new Qwe(4,2)
+        // console.log(`${val.in(3)}`)
+        
+
+        // class Calc1 {
+        //     constructor(a,b){
+        //         this.a = a;
+        //         this.b = b;
+        //     }
+        //     sum() {
+        //         return this.a + this.b;
+        //     }
+
+        // }
+
+        // class Calc2 extends Calc1 {
+        //     constructor(a,b,c) {
+        //         super(a, b);
+        //         this.c = c;
+        //     }
+        //     sum() {
+        //         return super.sum() + this.c;
+        //     }
+        //     avr() {
+        //         return this.sum() / 3;
+        //     }
+
+        // }
+
+        // let num = new Calc2(11, 22, 33);
+        // console.log(num.sum());
+        // console.log(num.avr());
+
+        // 클래스형 함수 > 사각형의 둘레 넓이 계산 메소드 제작
+
+        class Calc1 {
+            constructor(x,y) {
+                this.x = x;
+                this.y = y;
+            }
+            cir() {
+                return (this.x + this.y) * 2
+            }
+        }
+
+        class Calc2 extends Calc1 {
+            ext() {
+                return this.x * this.y;
+            }
+        }
+
+        let val = new Calc2(20,10);
+        console.log(val.cir());
+        console.log(val.ext());
+    </script>
+    
+</body>
+</html>
