@@ -112,10 +112,14 @@ footer {
     align-content: center;
     color: #fff;
     background: #000;
+    font-style: italic;
 }
 
 @media (max-width:1400px) {
     header .inner {
+        padding: 0 16px;
+    }
+    section .inner {
         padding: 0 16px;
     }
 }
