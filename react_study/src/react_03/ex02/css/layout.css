@@ -1,0 +1,107 @@
+/* reset */
+* {margin: 0;padding: 0;box-sizing: border-box;}
+a {text-decoration: none;color: inherit;}
+img, video, audio, iframe {display: block;max-width: 100%;}
+ul, li {list-style: none;}
+figure {width: fit-content;height: fit-content;}
+table, th, td {border-collapse: collapse; border-spacing: 0;}
+
+#wrap {
+    width: 100%;
+    height: 100vh;
+    color: #fff;
+    background-color: #111;
+    display: flex;
+}
+
+/* header */
+header {
+    width: 250px;
+    height: 100%;
+    border-right: 1px solid #666;
+}
+header .inner {
+    width: 100%;
+    height: 100%;
+    padding: 0 16px;
+}
+header .inner .logo {
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    line-height: 100px;
+}
+header .inner button {
+    width: 100%;
+    height: 45px;
+    font-size: 12px;
+    font-weight: bold;
+    color: #fff;
+    border-radius: 10px;
+    cursor: pointer;
+}
+header .inner button.memberBtn {
+    border: none;
+    background: linear-gradient(90deg, rgba(212,8,8,1) 0%, rgb(248, 136, 194) 50%, rgba(196,0,205,1) 100%);
+}
+header .inner button.appBtn {
+    border: 1px solid #666;
+    background-color: #000;
+}
+header .inner .nav {
+    width: 100%;
+    padding: 50px 0;
+}
+header .inner .nav ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    row-gap: 15px;
+}
+header .inner .nav ul li {
+    font-size: 14px;
+    font-weight: normal;
+}
+header .inner .gnb {
+    border-bottom: 1px solid #666;
+}
+
+/* section common */
+section {
+    width: calc(100% - 250px);
+    padding: 100px 50px;
+}
+
+/* contents */
+.contents .inner h2 {
+    position: relative;
+    font-size: 32px;
+    letter-spacing: -1px;
+    font-weight: bold;
+    margin-bottom: 40px;
+}
+.contents .inner h2 span {
+    position: absolute;
+    display: inline-block;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+    font-size: 14px;
+    font-weight: normal;
+    padding: 7px 12px;
+    border: 1px solid #666;
+    border-radius: 4px;
+}
+.contents .inner article {
+    width: 100%;
+}
+.contents .inner article h3 {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+.contents .inner article ul {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 15px;
+}
