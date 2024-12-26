@@ -2,14 +2,14 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 // import App from './react_04/App';
-import ClassState from './react_04/ClassState';
-// import App from './react_04/ex01/App';
+// import ClassState from './react_04/ClassState';
+import App from './react_04/ex04_a/App';
 import reportWebVitals from './reportWebVitals';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <ClassState />
+    <App />
   </React.StrictMode>
 );
 
