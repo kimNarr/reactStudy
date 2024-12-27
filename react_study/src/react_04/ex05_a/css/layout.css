@@ -1,0 +1,31 @@
+* {margin: 0;padding: 0;box-sizing: border-box;}
+a {text-decoration: none;color: inherit;}
+img, video, audio, iframe {display: block;max-width: 100%;}
+ul, li {list-style: none;}
+figure {width: fit-content;height: fit-content;}
+table, th, td {border-collapse: collapse; border-spacing: 0;}
+
+.allbox {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+}
+.box {
+    border: 1px solid #000;
+    max-width: 400px;
+    width: 100%;
+    padding: 40px;
+}
+.btnbox {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    padding: 50px 0;
+}
+.btnbox button{
+    display: block;
+    width: 70px;
+    height: 30px;
+}
