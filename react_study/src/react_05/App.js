@@ -3,6 +3,7 @@ import ClassCount from './ClassCount'
 import Timer from './Timer'
 import FunctionCount from './FunctionCount'
 import FunctionTimer from './FunctionTimer'
+import AddEvent from './AddEvent'
 
 function App() {
   return (
@@ -10,7 +11,8 @@ function App() {
       {/* <ClassCount /> */}
       {/* <Timer /> */}
       {/* <FunctionCount /> */}
-      <FunctionTimer />
+      {/* <FunctionTimer /> */}
+      <AddEvent />
     </div>
   )
 }
