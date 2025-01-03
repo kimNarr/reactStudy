@@ -60,6 +60,7 @@ table, th, td {border-collapse: collapse; border-spacing: 0;}
 .filter_wrap {
     padding: 0 10px;
     display: flex;
+    justify-content: flex-start;
     gap: 10px;
 }
 .filter_wrap button {
