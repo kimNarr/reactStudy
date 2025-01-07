@@ -1,0 +1,87 @@
+// 변수선언 : $이름
+$w-color: #fff;
+$g-size: 32px;
+
+// 믹스인 : 반복되는 스타일 블록을 재사용 할 수 있도록 정의
+@mixin button($bg-color:blue, $text-color:#fff) {
+    background-color: $bg-color;
+    color: $text-color;
+    padding: 16px;
+    border: none;
+    margin: 20px;
+}
+
+// 믹스인 호출 @include
+.pbtn {
+    @include button(); // 기본값사용
+    &:hover{
+        background-color: #000;
+    }
+}
+
+// 믹스인 호출 덮어쓰기
+.cbtn {
+    @include button($bg-color:white,$text-color:red) // css 추가사용불가
+}
+
+h2 {
+    color: #fff;
+}
+
+.Allbox{
+    width: 500px;
+    height: 500px;
+    border: 1px solid $w-color;
+    margin: $g-size;
+    .box{
+        width: calc(100%/3 - 8px);
+        height: calc(100%/3 - 8px);
+        border: 1px solid red;
+        &:first-child{
+            border: 1px solid blue;
+        }
+        &:hover {
+            background-color: #fff;
+        }
+    }
+}
+
+// 상속 :  공통스타일을 다른 선택자에 상속 할 수 있음. > @extend
+
+.contents{
+    @extend .Allbox;
+    background-color: #808080;
+}
+
+// 함수 @function > 함수로 계산된 값을 반환
+@function font-rem($px, $base:16) {
+    @return #{$px / $base}rem;
+}
+
+.fbox {
+    color: $w-color;
+    margin-bottom: 100px;
+    font-size: font-rem(32);
+}
+
+// 조건문 : 조건에 따라 다른 스타일 적용
+$theme : dark;
+body{
+    @if $theme == dark{
+        background-color: #000;
+        color: $w-color;
+    } @else{
+        background-color: #fff;
+        color: #000;
+    }
+}
+
+// 반복문 @for
+
+// 리스트나 맵 데이터를 반복 처리 : @each
+
+.fbox {
+    width: ((100% / 5) + 2);
+    height: 100px;
+    background-color: saddlebrown;
+}

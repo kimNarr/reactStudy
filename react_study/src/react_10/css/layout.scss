@@ -1,0 +1,80 @@
+/* reset */
+* {margin: 0;padding: 0;box-sizing: border-box;}
+a {text-decoration: none;color: inherit;}
+img, video, audio, iframe {display: block;max-width: 100%;}
+ul, li {list-style: none;}
+figure {width: fit-content;height: fit-content;}
+table, th, td {border-collapse: collapse; border-spacing: 0;}
+
+@mixin button() {
+    color: #333;
+    background-color: #fff;
+    padding: 10px 16px;
+    border: 1px solid #333;
+    border-radius: 4px;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.wrap {
+    width: 100%;
+    padding: 100px 0;
+    .contents {
+        max-width: 1400px;
+        margin: auto;
+        padding: 0 16px;
+        .title {
+            font-size: 32px;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        .category {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 40px;
+            button {
+                @include button();
+                &:hover {
+                    background-color: #333;
+                    color: #fff;
+                }
+            }
+            button.on {
+                background-color: #333;
+                color: #fff;
+            }
+        }
+        .newsList {
+            width: 100%;
+            padding: 30px;
+            background-color: #f0f0f0;
+            border-radius: 10px;
+            ul {
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                gap: 20px;
+                li {
+                    background-color: #fff;
+                    border-radius: 10px;
+                    padding: 20px;
+                    figure {
+                        width: 100%;
+                        height: 200px;
+                        overflow: hidden;
+                        .img {
+                            width: 100%;
+                            object-fit: cover;
+                            object-position: center;
+                        }
+                    }
+                    .title {
+                        font-size: 24px;
+                        font-weight: bold;
+                    }
+                }
+            }
+        }
+    }
+    
+}

@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import App from './react_08/api/App';
+import App from './react_10/App';
 // import ClassState from './react_04/ClassState';
 // import App from './react_04/ex05_a/App';
 import reportWebVitals from './reportWebVitals';

@@ -1,0 +1,63 @@
+.pbtn {
+  background-color: blue;
+  color: #fff;
+  padding: 16px;
+  border: none;
+  margin: 20px;
+}
+.pbtn:hover {
+  background-color: #000;
+}
+
+.cbtn {
+  background-color: white;
+  color: red;
+  padding: 16px;
+  border: none;
+  margin: 20px;
+}
+
+h2 {
+  color: #fff;
+}
+
+.Allbox, .contents {
+  width: 500px;
+  height: 500px;
+  border: 1px solid #fff;
+  margin: 32px;
+}
+.Allbox .box, .contents .box {
+  width: calc(33.3333333333% - 8px);
+  height: calc(33.3333333333% - 8px);
+  border: 1px solid red;
+}
+.Allbox .box:first-child, .contents .box:first-child {
+  border: 1px solid blue;
+}
+.Allbox .box:hover, .contents .box:hover {
+  background-color: #fff;
+}
+
+.contents {
+  background-color: #808080;
+}
+
+.fbox {
+  color: #fff;
+  margin-bottom: 100px;
+  font-size: 2rem;
+}
+
+body {
+  background-color: #000;
+  color: #fff;
+}
+
+.fbox {
+  width: 22%;
+  height: 100px;
+  background-color: saddlebrown;
+}
+
+/*# sourceMappingURL=App.css.map */

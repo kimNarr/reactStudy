@@ -1,0 +1,100 @@
+/* reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+img, video, audio, iframe {
+  display: block;
+  max-width: 100%;
+}
+
+ul, li {
+  list-style: none;
+}
+
+figure {
+  width: fit-content;
+  height: fit-content;
+}
+
+table, th, td {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+.wrap {
+  width: 100%;
+  padding: 100px 0;
+}
+.wrap .contents {
+  max-width: 1400px;
+  margin: auto;
+  padding: 0 16px;
+}
+.wrap .contents .title {
+  font-size: 32px;
+  text-align: center;
+  margin-bottom: 40px;
+}
+.wrap .contents .category {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 40px;
+}
+.wrap .contents .category button {
+  color: #333;
+  background-color: #fff;
+  padding: 10px 16px;
+  border: 1px solid #333;
+  border-radius: 4px;
+  transition: 0.3s;
+  cursor: pointer;
+}
+.wrap .contents .category button:hover {
+  background-color: #333;
+  color: #fff;
+}
+.wrap .contents .category button.on {
+  background-color: #333;
+  color: #fff;
+}
+.wrap .contents .newsList {
+  width: 100%;
+  padding: 30px;
+  background-color: #f0f0f0;
+  border-radius: 10px;
+}
+.wrap .contents .newsList ul {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+.wrap .contents .newsList ul li {
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 20px;
+}
+.wrap .contents .newsList ul li figure {
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+}
+.wrap .contents .newsList ul li figure .img {
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+.wrap .contents .newsList ul li .title {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+/*# sourceMappingURL=layout.css.map */
