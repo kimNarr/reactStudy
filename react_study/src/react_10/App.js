@@ -6,6 +6,7 @@ import './css/layout.css'
 function App() {
     const [news, setNews] = useState([])
     const [filter, setFilter] = useState('all')
+    const [loading, setLoading] = useState(false)
 
     const category = [
         {id:1, filter:'all', name: '전체'},
@@ -24,14 +25,17 @@ function App() {
 
     useEffect(()=>{
         const allNews = async ()=> {
+            setLoading(true)
             try {
                 if(filter === 'all'){
                     const newsList = await axios.get(`https://newsdata.io/api/1/latest?country=kr&apikey=pub_64515215181728cbe7be384f9a473ecddce17`)
                     setNews(newsList.data.results)
+                    setLoading(false)
                 } else {
                     const newsList = await axios.get(`https://newsdata.io/api/1/latest?country=kr&category=${filter}&apikey=pub_64515215181728cbe7be384f9a473ecddce17`)
                     setNews(newsList.data.results)
                     console.log(newsList)
+                    setLoading(false)
                 }         
             } catch(error) {
                 console.log("error")
@@ -44,7 +48,10 @@ function App() {
     return (
         <div className='wrap'>
             <div className='contents'>
-                <h2 className='title'>NEWS</h2>
+                <div className='title_wrap'>
+                    <h2 className='contents_title'>Utilizing React News API</h2>
+                    <p className='title_sub'>in React Study <span className='date'>2025-01-08<br/>by D.J KIM</span></p>
+                </div>
                 <div className='category'>
                     {
                         category.map((val)=>(
@@ -57,7 +64,9 @@ function App() {
                     }
                 </div>
                 <div className='newsList'>
-                    <NewsList news={news} />
+                    {
+                        loading === true ? <div className='loading'><div className='circle'></div></div> : <NewsList news={news} />
+                    }
                 </div>
             </div>
         </div>

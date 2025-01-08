@@ -6,75 +6,154 @@ ul, li {list-style: none;}
 figure {width: fit-content;height: fit-content;}
 table, th, td {border-collapse: collapse; border-spacing: 0;}
 
+/* font */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+
 @mixin button() {
-    color: #333;
-    background-color: #fff;
-    padding: 10px 16px;
-    border: 1px solid #333;
-    border-radius: 4px;
+    padding: 0 25px;
+    height: 40px;
+    font-size: 13px;
+    line-height: 40px;
+    color: #060807;
+    background-color: transparent;
+    border: 1px solid #060807;
     transition: 0.3s;
     cursor: pointer;
+    &:hover {
+        color: #fff;
+        background-color: #060807;
+    }
+}
+
+
+body {
+    color: #060807;
+    background-color: #ded9d3;
 }
 
 .wrap {
     width: 100%;
-    padding: 100px 0;
+    padding: 100px 16px;
     .contents {
         max-width: 1400px;
         margin: auto;
-        padding: 0 16px;
-        .title {
-            font-size: 32px;
+        padding-bottom: 20px;
+        background-color: #fff8f0;
+        box-shadow: 0px 10px 10px rgba(0,0,0,0.3);
+        .title_wrap {
+            font-family: "Playfair Display", serif;
+            padding: 50px 16px;
             text-align: center;
-            margin-bottom: 40px;
+            border-bottom: 2px solid #060807;
+            margin-bottom: 20px;
+            .contents_title {
+                font-size: 68px;
+                font-weight: 700;
+            }
+            .title_sub {
+                font-size: 14px;
+                font-weight: 500;
+                .date {
+                    float: right;
+                    text-align: right;
+                }
+            }
         }
         .category {
+            max-width: 1200px;
+            margin: auto;
             display: flex;
             justify-content: center;
             gap: 10px;
             margin-bottom: 40px;
             button {
-                @include button();
-                &:hover {
-                    background-color: #333;
-                    color: #fff;
-                }
+                @include button()
             }
             button.on {
-                background-color: #333;
                 color: #fff;
+                background-color: #060807;
             }
         }
         .newsList {
+            position: relative;
             width: 100%;
-            padding: 30px;
-            background-color: #f0f0f0;
-            border-radius: 10px;
+            min-height: 500px;
+            padding: 0 16px;
             ul {
                 display: grid;
                 grid-template-columns: repeat(3, 1fr);
-                gap: 20px;
+                gap: 16px;
                 li {
-                    background-color: #fff;
-                    border-radius: 10px;
+                    position: relative;
                     padding: 20px;
+                    border: 1px solid #060807;
                     figure {
                         width: 100%;
-                        height: 200px;
-                        overflow: hidden;
+                        margin-bottom: 16px;
                         .img {
                             width: 100%;
                             object-fit: cover;
-                            object-position: center;
+                            object-position: center 10%;
+                            height: 300px;
+                        }
+                    }
+                    &:first-child {
+                        grid-column: 1/3;
+                        .img {
+                            height: 400px;
                         }
                     }
                     .title {
-                        font-size: 24px;
-                        font-weight: bold;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                        display: -webkit-box;
+                        line-clamp: 2;
+                        -webkit-line-clamp: 2;
+                        -webkit-box-orient: vertical;
+                        margin-bottom: 24px;
+                    }
+                    .text {
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                        display: -webkit-box;
+                        line-clamp: 4;
+                        -webkit-line-clamp: 4;
+                        -webkit-box-orient: vertical;
+                        margin-bottom: 60px;
+                    }
+                    .viewMore {
+                        position: absolute;
+                        display: block;
+                        right: 20px;
+                        bottom: 20px;
+                        padding: 7px 15px;
+                        font-size: 13px;
+                        color: #fff;
+                        background-color: #060807;
                     }
                 }
             }
+            .loading {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                width: 80px;
+                height: 80px;
+                .circle {
+                    width: 80px;
+                    height: 80px;
+                    border-radius: 100%;
+                    border: 10px solid rgba(6, 8, 7, 0.2);
+                    border-top-color: rgb(6, 8, 7);
+                    animation: spin 1s infinite linear;
+                }
+                @keyframes spin { 
+                    100% { 
+                      transform: rotate(360deg); 
+                    } 
+                  } 
+            }
         }
     }
-    
 }
