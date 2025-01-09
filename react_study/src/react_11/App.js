@@ -2,9 +2,10 @@ import React, {useEffect, useState} from 'react'
 import axios from 'axios'
 import Category from './Category';
 import WeatherInfo from './WeatherInfo';
+import './App.css'
 
 function App() {
-    const [weather, setWeather] = useState([]);
+    const [weather, setWeather] = useState(null);
     const [select, setSelect] = useState('current')
 
     const getCurrentLoaction = () => {
@@ -22,7 +23,7 @@ function App() {
             setWeather(response.data)
             console.log("location",response.data)
         } catch(error) {
-            console.log("error")
+            alert("도시를 찾을 수 없습니다. 도시명을 정확히 입력해주세요")
         }
     }
 
@@ -33,9 +34,11 @@ function App() {
             setWeather(response.data)
             console.log("city", response.data)
         } catch(error) {
-            console.log("city error")
+            alert("도시를 찾을 수 없습니다. 도시명을 정확히 입력해주세요")
         }
     }
+
+    console.log(weather);
 
     useEffect(()=>{
         if(select === 'current') {
@@ -46,7 +49,7 @@ function App() {
     },[select])
 
     return (
-        <div>
+        <div className='weather_wrap'>
             {/* 
             1. 앱 실행시 현재 위치를 기반으로 한 날씨 정보 표시
             2. 날씨정보에는 도시이름, 섭씨온도, 화씨온도, 날씨상태(weather.main, weather.description)
