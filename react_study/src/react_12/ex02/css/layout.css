@@ -1,0 +1,188 @@
+/* reset */
+* {margin: 0;padding: 0;box-sizing: border-box;}
+a {text-decoration: none;color: inherit;}
+img, video, audio, iframe {display: block;max-width: 100%;}
+ul, li {list-style: none;}
+figure {width: fit-content;height: fit-content;}
+table, th, td {border-collapse: collapse; border-spacing: 0;}
+
+.wrap {
+    width: 100%;
+    padding-top: 100px;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    min-height: 80px;
+    background-color: #fff;
+    z-index: 9999;
+}
+header .inner {
+    width: 100%;
+    height: 100%;
+    padding: 0 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+header .inner .gnb {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    column-gap: 100px;
+}
+header .inner .gnb li {
+    font-size: 16px;
+    font-weight: 500;
+    text-transform: uppercase;
+}
+
+/* main */
+.main {
+    width: 100%;
+}
+
+.main article {
+    width: 100%;
+}
+.main article .inner {
+    padding: 100px 60px;
+}
+
+.main .main_slide .inner {
+    background-color: #ebedec;
+}
+.main .main_slide .inner .swiper-button-prev,
+.main .main_slide .inner .swiper-button-next {
+    color: #fff;
+}
+.main .main_slide .inner .swiper-pagination-bullet {
+    background: #ccc;
+}
+.main .main_slide .inner .swiper-pagination-bullet-active {
+    background: #007aff;
+}
+
+.main .main_info .inner .info {
+    max-width: 1280px;
+    margin: auto;
+}
+.main .main_info .inner .info .info_img {
+    padding: 0 20px;
+    margin-bottom: 100px;
+}
+.main .main_info .inner .info .info_text .name {
+    font-size: 13px;
+    font-weight: 500;
+    margin-bottom: 20px;
+}
+.main .main_info .inner .info .info_text .title {
+    font-size: 36px;
+    font-weight: 500;
+    margin-bottom: 40px;
+}
+.main .main_info .inner .info .info_text .text {
+    font-size: 21px;
+    font-weight: 300;
+    color: #a3a3a3;
+    line-height: 42px;
+    margin-bottom: 40px;
+}
+.main .main_info .inner .info .info_text button {
+    width: 150px;
+    height: 50px;
+    font-size: 12px;
+    font-weight: 300;
+    color: #a3a3a3;
+    border: 1px solid #a3a3a3;
+    background-color: #fff;
+}
+
+.main .main_eva {
+    background-color: #ebedec;
+    background-image: url('../../../../public/yoo/img/bg.png');
+    background-repeat: no-repeat;
+    background-position: 120% 15%;
+}
+.main article.main_eva .inner {
+    padding: unset;
+}
+.main .main_eva .inner .eva ul li {
+    display: flex;
+    flex-direction: column;
+}
+.main .main_eva .inner .eva ul li .eva_img {
+    margin-bottom: 40px;
+}
+.main .main_eva .inner .eva ul li:nth-child(2n) .eva_img {
+    margin-left: auto;
+}
+.main .main_eva .inner .eva ul li .eva_text {
+    max-width: 1280px;
+    margin: auto;
+}
+.main .main_eva .inner .eva ul li .eva_text {
+    margin-bottom: 100px;
+}
+.main .main_eva .inner .eva ul li .eva_text .text {
+    font-size: 21px;
+    font-weight: 500;
+    line-height: 42px;
+    margin-bottom: 20px;
+}
+.main .main_eva .inner .eva ul li .eva_text .name {
+    font-size: 18px;
+    font-weight: 500;
+    color: #808080;
+    line-height: 32px;
+    margin-bottom: 20px;
+}
+
+.main article.main_work {}
+.main article.main_work .inner {}
+.main .main_work .inner .title {
+    font-size: 48px;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 40px;
+}
+.main .main_work .inner .work_list {} 
+.main .main_work .inner .work_list ul {
+    display: flex;
+    justify-content: space-between;
+} 
+.main .main_work .inner .work_list ul li {} 
+
+footer {
+    color: #767676;
+    background-color: #222;
+}
+footer .inner {
+    max-width: 1280px;
+    padding: 50px 16px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+}
+
+footer .inner .logo {}
+footer .inner .logo img {
+    filter: grayscale(100%);
+    opacity: 0.5;
+}
+footer .inner .fnb {
+    display: flex;
+    gap: 50px;
+}
+footer .inner .fnb li {}
+footer .inner .fnb li p {}
+footer .inner .copyright {
+    opacity: 0.5;
+}
