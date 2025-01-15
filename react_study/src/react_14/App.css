@@ -1,0 +1,154 @@
+/* reset */
+* {margin: 0;padding: 0;box-sizing: border-box;}
+a {text-decoration: none;color: inherit;}
+img, video, audio, iframe {display: block;max-width: 100%;}
+ul, li {list-style: none;}
+figure {width: fit-content;height: fit-content;}
+table, th, td {border-collapse: collapse; border-spacing: 0;}
+
+header {}
+
+header .login {
+    display: flex;
+    height: 30px;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 0 16px;
+    gap: 0 8px;
+}
+
+.login div {
+    cursor: pointer;
+    display: flex;
+    gap: 0 8px;
+}
+
+.icon {
+    font-size: 1.3rem;
+}
+.logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 16px 0;
+}
+
+.logo h1 {
+    width: 120px;
+    height: fit-content;
+}
+
+.nav {
+    position: relative;
+}
+
+.nav ul {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0 24px;
+    padding: 16px 0;
+}
+
+.nav .search {
+    position: absolute;
+    right: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    align-items: center;
+    gap: 0 4px;
+}
+
+.contents {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    padding: 20px;
+    border: 1px solid #ececec;
+}
+
+.box img {
+    transition: 0.3s;
+}
+
+.box:hover img {
+    scale: 1.02;
+}
+
+.box ul {
+    display: flex;
+    justify-content: center;
+    gap: 0 10px;
+}
+
+.login_form {
+    max-width: 700px;
+    margin: 100px auto 0;
+    border: 1px solid #ececec;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+.login_form h1 {
+    text-transform: uppercase;
+}
+.login_form .idpw {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.login_form .idpw > div {
+    display: flex;
+}
+
+.p_detail {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.p_detail .info {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.p_detail .info ul {
+    display: flex;
+    gap: 0 10px;
+}
+.p_detail .info ul li {
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    align-content: center;
+    color: #fff;
+    background-color: black;
+    border-radius: 100%;
+}
+
+@media (max-width: 1200px) {
+    .contents {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+@media (max-width: 768px) {
+    .contents {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
