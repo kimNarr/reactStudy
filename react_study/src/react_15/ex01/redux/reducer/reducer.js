@@ -12,7 +12,8 @@ let initialState = {
 function reducer(state = initialState, action) {
     switch (action.type) {
         case "ADDCART" :
-            let newCart = state.cart.map(val =>{
+            let newCart;
+            newCart = state.cart.map(val =>{
                 if(val === action.payload) {
                     console.log("111")
                     return {...val, count: val.count + 1}
