@@ -1,6 +1,7 @@
 import React from 'react'
 import AddTel from './component/AddTel'
 import TelList from './component/TelList'
+import './css/App.css'
 
 function App() {
     // 1. 왼쪽에는 연락처 등록하는 폼, 오른쪽에는 연락처 리스트와 검색창
@@ -9,11 +10,13 @@ function App() {
     // 4. 사용자가 유저를 이름검색으로 찾을 수 있도록 함
     // vvvvv28.dothome.co.kr
     return (
-        <div>
-            <h1>연락처</h1>
-            <div className='tel_wrap'>
-                <AddTel />
-                <TelList />
+        <div className='wrap'>
+            <div className='inner'>
+                <h1 className='title'>PHONE BOOK</h1>
+                <div className='tel_wrap'>
+                    <AddTel />
+                    <TelList />
+                </div>
             </div>
         </div>
     )

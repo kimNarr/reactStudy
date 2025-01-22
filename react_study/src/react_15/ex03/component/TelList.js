@@ -1,32 +1,62 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useSelector } from 'react-redux'
 
 function TelList() {
     const telList = useSelector(state => state.telList);
 
-    const [userName, setUserName] = useState('')
+    const [userName, setUserName] = useState('');
+    const [searchValue, setSearchValue] = useState([]);
+    const [searchResult, setSearchResult] = useState([]);
 
     const searchUser = ()=> {
-        telList = telList.filter(item => item.name.includes(userName))
+        const filterList = telList.filter(item => item.name.includes(userName))
+        setSearchValue(filterList)
+    }
+    
+    // 초기 리스트
+    const initialList = () => { 
+        setSearchResult(telList)
     }
 
+    // 검색 리스트
+    const searchList = () => {
+        setSearchResult(searchValue)
+    }
+
+    const searchKeyDown = (e) => {
+        if(e.key === "Enter") {
+            searchUser()
+        }
+    }
+
+    useEffect(()=>{
+        if(searchValue.length > 0) {
+            searchList()
+        }
+    },[searchValue])
+
+    useEffect(()=>{
+        initialList()
+    }, [telList]);
+
     return (
-        <div className='telList'>
-            <div>
+        <div className='tel_list'>
+            <div className='search'>
                 <input 
                 type="text"
-                placeholder='이름을 입력하세요'
                 onChange={(e)=> setUserName(e.target.value)}
+                onKeyDown={(e)=> searchKeyDown(e)}
                 value={userName}
                 />
+                <span>이름으로 검색</span>
                 <button type="button" onClick={searchUser}>찾기</button>
             </div>
-            <p>num : {telList.length}</p>
-            <ul>
+            <p className='member'>{searchResult.length} 명</p>
+            <ul className='list'>
                 {
-                    telList.map(item=>(
+                    searchResult.map(item=>(
                         <li key={item.id}>
-                            <img style={{width: '60px'}} src="./user.png" alt="" />
+                            <img src="./user.png" alt={item.name} />
                             <h2>{item.name}</h2>
                             <p>{item.tel}</p>
                         </li>
