@@ -49,14 +49,14 @@ function App() {
     return (
         <div>
         <h1>전체상품</h1>
-        <input type='text' onKeyPress={(event) => search(event)}/>
-        <div className='contents'>
-            {
-            product.map(item=>(
-                <ProdCard key={item.id} item={item}/>
-            ))
-            }
-        </div>
+            <input type='text' onKeyPress={(event) => search(event)}/>
+            <div className='contents'>
+                {
+                product.map(item=>(
+                    <ProdCard key={item.id} item={item}/>
+                ))
+                }
+            </div>
         </div>
     )
 }

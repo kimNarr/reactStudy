@@ -1,14 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import App from './react_15/ex03/App';
+import App from './react_17/App';
 // import ClassState from './react_04/ClassState';
 // import App from './react_04/ex05_a/App';
 import reportWebVitals from './reportWebVitals';
 import { Provider } from 'react-redux';
 // import {BrowserRouter} from 'react-router-dom'
 
-import store from './react_15/ex03/store/store';
+import store from './react_17/store/store';
 
 // Provider : store를 props로 받아 이를 하위 컴포넌트들에게 전달함
 // 하위컴포넌트들은 별도의 props 전달 없이도 store에 접근할 수 있음
@@ -16,11 +16,11 @@ import store from './react_15/ex03/store/store';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   // <React.StrictMode>
-    // {/* <BrowserRouter> */}
-    <Provider store={store}>
-      <App />
-    </Provider>
-    // {/* </BrowserRouter> */}
+    // <BrowserRouter>
+      <Provider store={store}>
+        <App />
+      </Provider>
+    // </BrowserRouter>
   // </React.StrictMode>
 );
 

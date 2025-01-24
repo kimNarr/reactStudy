@@ -9,9 +9,10 @@ table, th, td {border-collapse: collapse; border-spacing: 0;}
 .wrap {width: 100%;}
 .wrap .inner {
     position: relative;
-    max-width: 600px;
+    max-width: 400px;
     margin: 100px auto;
     overflow: hidden;
+    background: #f7f7f7;
 }
 .wrap .inner .title {
     text-align: center;
@@ -31,7 +32,10 @@ table, th, td {border-collapse: collapse; border-spacing: 0;}
 
 .add_tel {
     position: absolute;
-    width: 100%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
     background-color: #fff;
     z-index: 9999;
 }

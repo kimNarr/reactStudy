@@ -47,6 +47,7 @@ function AddTel() {
                 </div>
                 <button type="submit">저장</button>
             </form>
+            <button type="button"></button>
         </div>
     )
 }
