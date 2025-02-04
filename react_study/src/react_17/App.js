@@ -1,6 +1,6 @@
 import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import {plus, minus, gop, reset} from './store/reducer/counterSlice'
+import {plus, minus, gop, reset} from './redux/reducer/counterSlice'
 
 function App() {
     const count = useSelector(state=>state.counter.count) // counter >> store 에서 정의한 이름
